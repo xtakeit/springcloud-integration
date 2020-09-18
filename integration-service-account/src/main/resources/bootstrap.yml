@@ -10,7 +10,7 @@ spring:
       discovery:
         server-addr: ${myself.nacos-server-addr}
         group: SEATA_GROUP
-        ip: 121.36.44.85
+#        ip: 121.36.44.85
       config:
         server-addr: ${myself.nacos-server-addr}
         extension-configs:
@@ -26,7 +26,7 @@ dubbo:
   registry:
     address: nacos://39.100.94.231:8848
   scan:
-    base-packages: cn.edu.dgut.intergration
+    base-packages: cn.edu.dgut.integration
   cloud:
     subscribed-services:
 

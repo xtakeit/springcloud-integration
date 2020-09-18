@@ -1,8 +1,8 @@
-package cn.edu.dgut.intergration.order.service.impl;
+package cn.edu.dgut.integration.order.service.impl;
 
-import cn.edu.dgut.intergration.api.AccountService;
-import cn.edu.dgut.intergration.api.OrderService;
-import cn.edu.dgut.intergration.api.StorageService;
+import cn.edu.dgut.integration.api.AccountService;
+import cn.edu.dgut.integration.api.OrderService;
+import cn.edu.dgut.integration.api.StorageService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Reference;
 import org.apache.dubbo.config.annotation.Service;

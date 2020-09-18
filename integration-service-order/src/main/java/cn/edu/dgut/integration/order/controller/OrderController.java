@@ -1,6 +1,6 @@
-package cn.edu.dgut.intergration.order.controller;
+package cn.edu.dgut.integration.order.controller;
 
-import cn.edu.dgut.intergration.api.OrderService;
+import cn.edu.dgut.integration.api.OrderService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

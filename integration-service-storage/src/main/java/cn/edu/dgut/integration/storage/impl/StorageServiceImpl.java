@@ -1,6 +1,6 @@
-package cn.edu.dgut.intergration.storage.impl;
+package cn.edu.dgut.integration.storage.impl;
 
-import cn.edu.dgut.intergration.api.StorageService;
+import cn.edu.dgut.integration.api.StorageService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
 

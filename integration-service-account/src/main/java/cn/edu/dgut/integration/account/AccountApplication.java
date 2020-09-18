@@ -1,4 +1,4 @@
-package cn.edu.dgut.intergration.order;
+package cn.edu.dgut.integration.account;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class OrderApplication {
+public class AccountApplication {
     public static void main(String[] args) {
-        SpringApplication.run(OrderApplication.class, args);
+        SpringApplication.run(AccountApplication.class, args);
     }
 }

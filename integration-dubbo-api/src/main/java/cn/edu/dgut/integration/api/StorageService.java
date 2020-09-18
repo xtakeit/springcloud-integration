@@ -1,4 +1,4 @@
-package cn.edu.dgut.intergration.api;
+package cn.edu.dgut.integration.api;
 
 public interface StorageService {
 

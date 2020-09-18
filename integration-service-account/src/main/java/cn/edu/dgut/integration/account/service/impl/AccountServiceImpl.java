@@ -1,6 +1,6 @@
-package cn.edu.dgut.intergration.account.service.impl;
+package cn.edu.dgut.integration.account.service.impl;
 
-import cn.edu.dgut.intergration.api.AccountService;
+import cn.edu.dgut.integration.api.AccountService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
 

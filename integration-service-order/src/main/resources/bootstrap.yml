@@ -10,7 +10,7 @@ spring:
       discovery:
         server-addr: ${myself.nacos-server-addr}
         group: SEATA_GROUP
-        ip: 121.36.44.85
+#        ip: 121.36.44.85
       config:
         server-addr: ${myself.nacos-server-addr}
         extension-configs:
@@ -27,7 +27,7 @@ dubbo:
     address: nacos://39.100.94.231:8848
   # 消费者如果不提供服务，不需要扫包也行（默认加上）
   scan:
-    base-packages: cn.edu.dgut.intergration
+    base-packages: cn.edu.dgut.integration
   #启动时不要报错，等调用时再报错
   consumer:
     check: false
