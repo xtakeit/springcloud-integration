@@ -1,0 +1,39 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: account-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${myself.nacos-server-addr}
+        group: SEATA_GROUP
+        ip: 121.36.44.85
+      config:
+        server-addr: ${myself.nacos-server-addr}
+        extension-configs:
+          - data-id: common.yaml
+            refresh: true
+          - data-id: ${spring.application.name}-${spring.profiles.active}.yaml
+            refresh: true
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: 20881
+  registry:
+    address: nacos://39.100.94.231:8848
+  scan:
+    base-packages: cn.edu.dgut.intergration
+  cloud:
+    subscribed-services:
+
+
+myself:
+  nacos-server-addr: 39.100.94.231:8848
+
+
+
+

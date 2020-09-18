@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/integration-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-dubbo-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-dubbo-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-oauth2-authorization-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-oauth2-authorization-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-service-account/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-service-account/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-service-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-service-order/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-service-storage/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/integration-service-storage/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

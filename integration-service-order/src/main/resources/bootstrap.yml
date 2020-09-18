@@ -1,0 +1,43 @@
+server:
+  port: 9092
+spring:
+  application:
+    name: order-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${myself.nacos-server-addr}
+        group: SEATA_GROUP
+        ip: 121.36.44.85
+      config:
+        server-addr: ${myself.nacos-server-addr}
+        extension-configs:
+          - data-id: common.yaml
+            refresh: true
+          - data-id: ${spring.application.name}-${spring.profiles.active}.yaml
+            refresh: true
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: 20882
+  registry:
+    address: nacos://39.100.94.231:8848
+  # 消费者如果不提供服务，不需要扫包也行（默认加上）
+  scan:
+    base-packages: cn.edu.dgut.intergration
+  #启动时不要报错，等调用时再报错
+  consumer:
+    check: false
+  #订阅所有服务
+  cloud:
+    subscribed-services: "*"
+
+myself:
+  nacos-server-addr: 39.100.94.231:8848
+
+
+
+
