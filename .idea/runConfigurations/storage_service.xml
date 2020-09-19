@@ -40,7 +40,7 @@
       </settings>
     </deployment>
     <method v="2">
-      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean install -Dmaven.test.skip=true" />
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/integration-service-storage/pom.xml" goal="clean install -Dmaven.test.skip=true" />
     </method>
   </configuration>
 </component>

@@ -1,43 +1,26 @@
 server:
-  port: 9092
+  port: 8888
 spring:
   application:
-    name: order-service
+    name: oauth-server
   profiles:
     active: dev
   cloud:
     nacos:
       discovery:
         server-addr: ${myself.nacos-server-addr}
+        #只有同一个namespace 和 group的微服务才能互相发现
         group: SEATA_GROUP
-        ip: 121.36.44.85
+        ip: 101.132.142.58
       config:
         server-addr: ${myself.nacos-server-addr}
         extension-configs:
+#          - data-id: sentinel.yaml
+#            refresh: true
           - data-id: common.yaml
             refresh: true
           - data-id: ${spring.application.name}-${spring.profiles.active}.yaml
             refresh: true
 
-dubbo:
-  protocol:
-    name: dubbo
-    port: 20882
-  registry:
-    address: nacos://39.100.94.231:8848
-  # 消费者如果不提供服务，不需要扫包也行（默认加上）
-  scan:
-    base-packages: cn.edu.dgut.integration
-  #启动时不要报错，等调用时再报错
-  consumer:
-    check: false
-  #订阅所有服务
-  cloud:
-    subscribed-services: "account-service,storage-service"
-
 myself:
   nacos-server-addr: 39.100.94.231:8848
-
-
-
-

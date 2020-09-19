@@ -1,0 +1,26 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="gateway-server" type="docker-deploy" factoryName="dockerfile" server-name="aliyun">
+    <deployment type="dockerfile">
+      <settings>
+        <option name="imageTag" value="gateway-server" />
+        <option name="buildCliOptions" value="" />
+        <option name="command" value="" />
+        <option name="containerName" value="gateway-server" />
+        <option name="entrypoint" value="" />
+        <option name="portBindings">
+          <list>
+            <DockerPortBindingImpl>
+              <option name="containerPort" value="9527" />
+              <option name="hostPort" value="9527" />
+            </DockerPortBindingImpl>
+          </list>
+        </option>
+        <option name="commandLineOptions" value="" />
+        <option name="sourceFilePath" value="integration-gateway/dockerfile" />
+      </settings>
+    </deployment>
+    <method v="2">
+      <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/integration-gateway/pom.xml" goal="clean install -Dmaven.test.skip=true" />
+    </method>
+  </configuration>
+</component>

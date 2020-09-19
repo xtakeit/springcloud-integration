@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"cn.edu.dgut.integration"})
 public class AccountApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(AccountApplication.class, args);
-    }
+    public static void main(String[] args) { SpringApplication.run(AccountApplication.class, args); }
 }
