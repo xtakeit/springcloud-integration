@@ -15,12 +15,14 @@ spring:
       config:
         server-addr: ${myself.nacos-server-addr}
         extension-configs:
-          - data-id: sentinel.yaml
-            refresh: true
+#          - data-id: sentinel.yaml
+#            refresh: true
           - data-id: common.yaml
             refresh: true
           - data-id: ${spring.application.name}-${spring.profiles.active}.yaml
             refresh: true
+
+
 
 myself:
   nacos-server-addr: 39.100.94.231:8848
