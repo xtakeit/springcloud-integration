@@ -34,24 +34,24 @@
         </dependency>-->
         <!-- sentinel -->
         <!-- sentinel持久化 -->
-<!--        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-nacos</artifactId>
         </dependency>-->
         <!-- sentinel client connect to server jar-->
-<!--        <dependency>
+        <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-transport-simple-http</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-        </dependency>-->
+        </dependency>
         <!-- seata-->
-<!--        <dependency>
+        <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-alibaba-seata</artifactId>
-        </dependency>-->
+        </dependency>
         <!--数据库相关 -->
         <dependency>
             <groupId>mysql</groupId>

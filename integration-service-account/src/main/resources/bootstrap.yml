@@ -14,10 +14,20 @@ spring:
       config:
         server-addr: ${myself.nacos-server-addr}
         extension-configs:
+          - data-id: seata.yaml
+            refresh: true
+          - data-id: sentinel.yaml
+            refresh: true
           - data-id: common.yaml
             refresh: true
           - data-id: ${spring.application.name}-${spring.profiles.active}.yaml
             refresh: true
+    sentinel:
+      transport:
+        clientIp: 121.36.44.85
+        dashboard: 101.132.142.58:8081
+        port: 8719
+
 
 dubbo:
   protocol:

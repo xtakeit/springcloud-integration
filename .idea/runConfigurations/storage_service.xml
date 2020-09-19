@@ -33,6 +33,10 @@
               <option name="containerPort" value="20883" />
               <option name="hostPort" value="20883" />
             </DockerPortBindingImpl>
+            <DockerPortBindingImpl>
+              <option name="containerPort" value="8721" />
+              <option name="hostPort" value="8721" />
+            </DockerPortBindingImpl>
           </list>
         </option>
         <option name="commandLineOptions" value="" />
