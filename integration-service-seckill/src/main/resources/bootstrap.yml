@@ -1,0 +1,70 @@
+server:
+  port: 9094
+spring:
+  application:
+    name: seckill-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${myself.nacos-server-addr}
+        group: SEATA_GROUP
+        ip: 121.36.44.85
+      config:
+        server-addr: ${myself.nacos-server-addr}
+        extension-configs:
+          - data-id: seata.yaml
+            refresh: true
+          #          - data-id: sentinel.yaml
+          #            refresh: true
+          - data-id: common.yaml
+            refresh: true
+          - data-id: ${spring.application.name}-${spring.profiles.active}.yaml
+            refresh: true
+    sentinel:
+      transport:
+        clientIp: 121.36.44.85
+        dashboard: 101.132.142.58:8081
+        port: 8720
+
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    timeout: 10s
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
+  kafka:
+    bootstrap-servers: 47.107.127.223:9092
+    producer:
+      # value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.springframework.kafka.support.serializer.StringOrBytesSerializer
+
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: 20884
+  registry:
+    address: nacos://39.100.94.231:8848
+  # 消费者如果不提供服务，不需要扫包也行（默认加上）
+  scan:
+    base-packages: cn.edu.dgut.integration
+  #启动时不要报错，等调用时再报错
+  consumer:
+    check: false
+  #订阅所有服务
+  cloud:
+    subscribed-services: "account-service,storage-service,order-service"
+
+myself:
+  nacos-server-addr: 39.100.94.231:8848
+
+
+
+

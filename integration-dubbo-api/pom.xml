@@ -12,4 +12,12 @@
     <artifactId>integration-dubbo-api</artifactId>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.edu.dgut</groupId>
+            <artifactId>integration-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 </project>

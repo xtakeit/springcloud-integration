@@ -12,6 +12,7 @@
         <module name="integration-service-account" />
         <module name="integration-gateway" />
         <module name="integration-service-order" />
+        <module name="integration-service-seckill" />
         <module name="integration-dubbo-api" />
         <module name="integration-service-storage" />
       </profile>

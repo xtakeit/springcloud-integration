@@ -1,22 +1,18 @@
 package cn.edu.dgut.integration.auth.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import javax.persistence.*;
 
 @Data
-@Entity
-@Table(name = "user")
+@TableName("order_tbl")
 public class User{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    @Column(nullable = false)
+    @TableId(type= IdType.AUTO)
+    private Long id;
     private String username;
-
-    @Column(nullable = false)
     private String password;
 
 

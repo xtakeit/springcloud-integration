@@ -16,8 +16,8 @@ public class UserService {
 
     public Boolean register(User user){
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user = userDao.save(user);
-        if(user != null){
+        Integer row = userDao.insert(user);
+        if(row == 1){
             return true;
         }
         return false;

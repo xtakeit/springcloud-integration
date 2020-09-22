@@ -2,6 +2,8 @@ package cn.edu.dgut.integration.auth.config;
 
 import cn.edu.dgut.integration.auth.dao.UserDao;
 import cn.edu.dgut.integration.auth.pojo.User;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,20 +12,23 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 
 @Component
 public class MyUserDetailsService implements UserDetailsService {
 
-    @Autowired
+    @Resource
     private UserDao userDao;
 
-    @Autowired
+    @Resource
     private PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userDao.findByUsername(username);
+        QueryWrapper<User> userWrapper = new QueryWrapper<>();
+        userWrapper.eq("username",username);
+        User user = userDao.selectOne(userWrapper);
         if (user == null) {
             throw new UsernameNotFoundException("没有该用户");
         }
