@@ -135,4 +135,13 @@ public interface BaseService<T> {
      * @param queryWrapper 实体对象封装操作类
      */
     <E extends IPage<Map<String, Object>>> E selectMapsPage(E page, @Param(Constants.WRAPPER) Wrapper<T> queryWrapper);
+
+
+    /**
+     * 判读影响行数是否非0
+     *
+     * @param row
+     * @return
+     */
+     Boolean judgeRowNotEqualsToZero(Integer row);
 }

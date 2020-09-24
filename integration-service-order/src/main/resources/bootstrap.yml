@@ -41,9 +41,9 @@ dubbo:
   #启动时不要报错，等调用时再报错
   consumer:
     check: false
-  #订阅所有服务
+  #订阅不订阅服务 "account-service,storage-service"
   cloud:
-    subscribed-services: "account-service,storage-service"
+    subscribed-services:
 
 myself:
   nacos-server-addr: 39.100.94.231:8848

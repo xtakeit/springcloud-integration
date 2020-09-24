@@ -2,8 +2,8 @@ package cn.edu.dgut.integration.storage.service.impl;
 
 import cn.edu.dgut.integration.api.StorageApi;
 import cn.edu.dgut.integration.common.service.impl.BaseServiceImpl;
-import cn.edu.dgut.integration.storage.dao.StorageDao;
 import cn.edu.dgut.integration.model.Storage;
+import cn.edu.dgut.integration.storage.dao.StorageDao;
 import cn.edu.dgut.integration.storage.service.StorageService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
@@ -28,7 +28,15 @@ public class StorageServiceImpl extends BaseServiceImpl<Storage> implements Stor
     }
 
     @Override
-    public Boolean reduce(String commodityCode, Long count) {
-        return true;
+    public Boolean reduce(Long storageId, Long count) {
+        Integer row = storageDao.reduceStorageCount(storageId, count);
+        return judgeRowNotEqualsToZero(row);
     }
+
+    @Override
+    public Storage selectByStorageId(Long storageId) {
+        return storageDao.selectById(storageId);
+    }
+
+
 }

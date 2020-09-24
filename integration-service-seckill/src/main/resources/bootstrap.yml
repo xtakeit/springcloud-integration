@@ -26,12 +26,12 @@ spring:
       transport:
         clientIp: 121.36.44.85
         dashboard: 101.132.142.58:8081
-        port: 8720
+        port: 8722
 
   redis:
-    host: localhost
+    host: 101.132.142.58
     port: 6379
-    password:
+    password: redis
     timeout: 10s
     lettuce:
       pool:
@@ -40,10 +40,12 @@ spring:
         max-active: 8
         max-wait: -1ms
   kafka:
-    bootstrap-servers: 47.107.127.223:9092
+    bootstrap-servers: 101.132.142.58:10001
     producer:
       # value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       value-serializer: org.springframework.kafka.support.serializer.StringOrBytesSerializer
+    consumer:
+      value-deserializer: org.springframework.kafka.support.serializer.StringOrBytesSerializer
 
 
 dubbo:

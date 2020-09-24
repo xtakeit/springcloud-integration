@@ -102,4 +102,17 @@ public class BaseServiceImpl<T> implements BaseService<T> {
     public <E extends IPage<Map<String, Object>>> E selectMapsPage(E page, Wrapper<T> queryWrapper) {
         return baseMapper.selectMapsPage(page, queryWrapper);
     }
+
+    @Override
+    public Boolean judgeRowNotEqualsToZero(Integer row) {
+        // 行数为空，false
+        if (row == null) {
+            return false;
+        }
+        // 行数为0，false
+        if (row == 0) {
+            return false;
+        }
+        return true;
+    }
 }

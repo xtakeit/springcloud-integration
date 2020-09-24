@@ -19,5 +19,6 @@ public class Storage implements Serializable {
   private Long storageId;
   private String commodityCode;
   private Long count;
+  private Double money;
 
 }

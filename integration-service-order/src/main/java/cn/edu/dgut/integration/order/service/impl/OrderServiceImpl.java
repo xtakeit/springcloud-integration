@@ -5,6 +5,7 @@ import cn.edu.dgut.integration.common.service.impl.BaseServiceImpl;
 import cn.edu.dgut.integration.model.Order;
 import cn.edu.dgut.integration.order.dao.OrderDao;
 import cn.edu.dgut.integration.order.service.OrderService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
 
@@ -24,4 +25,24 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
         super.setBaseMapper(orderDao);
     }
 
+
+    @Override
+    public Boolean add(Order entity) {
+        Integer row = orderDao.insert(entity);
+        return judgeRowNotEqualsToZero(row);
+    }
+
+    @Override
+    public Boolean judgeIsOrdered(Long userId, Long storageId) {
+        // 查询订单是否已存在
+        Order order = new Order();
+        order.setUserId(userId);
+        order.setStorageId(storageId);
+        QueryWrapper<Order> queryWrapper = new QueryWrapper<>();
+        order = orderDao.selectOne(queryWrapper);
+        if (order == null) {
+            return false;
+        }
+        return true;
+    }
 }

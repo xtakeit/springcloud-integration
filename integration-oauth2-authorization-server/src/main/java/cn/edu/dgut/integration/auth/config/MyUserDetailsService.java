@@ -2,9 +2,7 @@ package cn.edu.dgut.integration.auth.config;
 
 import cn.edu.dgut.integration.auth.dao.UserDao;
 import cn.edu.dgut.integration.auth.pojo.User;
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
