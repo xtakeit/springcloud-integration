@@ -19,7 +19,7 @@ import javax.annotation.Resource;
  * 不开放dubbo调用
  */
 @Service
-public class SeckillServiceimpl implements SecKillService {
+public class SecKillServiceImpl implements SecKillService {
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
@@ -64,8 +64,5 @@ public class SeckillServiceimpl implements SecKillService {
         // 生成订单成功
         return JsonResult.build(200, "秒杀成功", null);
     }
-
-
-
 
 }

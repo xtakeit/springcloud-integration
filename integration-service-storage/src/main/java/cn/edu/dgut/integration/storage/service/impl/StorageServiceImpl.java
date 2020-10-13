@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author moon
@@ -29,7 +30,9 @@ public class StorageServiceImpl extends BaseServiceImpl<Storage> implements Stor
 
     @Override
     public Boolean reduce(Long storageId, Long count) {
+        System.out.println(storageId + ":" + count);
         Integer row = storageDao.reduceStorageCount(storageId, count);
+        System.out.println("==" + row + "==");
         return judgeRowNotEqualsToZero(row);
     }
 
@@ -38,5 +41,9 @@ public class StorageServiceImpl extends BaseServiceImpl<Storage> implements Stor
         return storageDao.selectById(storageId);
     }
 
+    @Override
+    public List<Storage> selectAll() {
+        return storageDao.selectList(null);
+    }
 
 }

@@ -1,5 +1,8 @@
 server:
   port: 9094
+  tomcat:
+    max-threads: 1000
+    accept-count: 800
 spring:
   application:
     name: seckill-service
@@ -33,7 +36,7 @@ spring:
     port: 6379
     password: redis
     timeout: 10s
-    lettuce:
+    jedis:
       pool:
         min-idle: 0
         max-idle: 8
@@ -44,9 +47,6 @@ spring:
     producer:
       # value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       value-serializer: org.springframework.kafka.support.serializer.StringOrBytesSerializer
-    consumer:
-      value-deserializer: org.springframework.kafka.support.serializer.StringOrBytesSerializer
-
 
 dubbo:
   protocol:
@@ -63,6 +63,7 @@ dubbo:
   #订阅所有服务
   cloud:
     subscribed-services: "account-service,storage-service,order-service"
+
 
 myself:
   nacos-server-addr: 39.100.94.231:8848

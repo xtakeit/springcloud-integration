@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StorageDao extends BaseMapper<Storage> {
 
-    @Update("update storage_tbl set count=count-#{reduceCount} where storage_id = #{storageId} and (count-#{reduceCount}) > 0 ")
+    @Update("update storage_tbl set count=count - #{reduceCount} where storage_id = #{storageId} and (count - #{reduceCount}) >= 0 ")
     int reduceStorageCount(@Param("storageId") Long storageId, @Param("reduceCount") Long reduceCount);
 
 }

@@ -29,6 +29,7 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
     @Override
     public Boolean add(Order entity) {
         Integer row = orderDao.insert(entity);
+        System.out.println("row:" + row);
         return judgeRowNotEqualsToZero(row);
     }
 
@@ -38,7 +39,7 @@ public class OrderServiceImpl extends BaseServiceImpl<Order> implements OrderSer
         Order order = new Order();
         order.setUserId(userId);
         order.setStorageId(storageId);
-        QueryWrapper<Order> queryWrapper = new QueryWrapper<>();
+        QueryWrapper<Order> queryWrapper = new QueryWrapper<>(order);
         order = orderDao.selectOne(queryWrapper);
         if (order == null) {
             return false;
